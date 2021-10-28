@@ -8,7 +8,9 @@ https://minikube.sigs.k8s.io/docs/start/
  - Your Windows user added as a member of the `hyper-v administrators` security group
 
 ### start Minikube
-    minikube start --memory 1024s --cpus=2
+Limiting minikube to 2GB and 2 CPUs
+
+    minikube start --memory 2048 --cpus=2
 
 ### check status of minikube
     minikube kubectl -- get pods -A
@@ -34,4 +36,23 @@ service - A set of pods that perform the same task.
 
     minikube kubectl -- port-forward service/cassandra 9042:9042
 
-Note that the `port-forward` runs in the foreground.
+Note that the `port-forward` runs in the foreground.  You can break-out of it with control-C.
+
+### stop cluster
+
+    minikube stop
+
+### restart provisioned cluster
+
+    minikube start
+
+Don't forget to rerun the `port-forward` command!
+
+### Nuke and pave your K8s clusters and start over
+
+    minikube delete
+
+Careful!  This will destroy all of your local pods, services, statful sets, etc.
+
+### minikube documentation
+https://minikube.sigs.k8s.io/docs/start/
