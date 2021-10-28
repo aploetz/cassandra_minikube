@@ -1,12 +1,13 @@
 # minikube Cassandra steps
 
-## install Minikube
+### install Minikube
 https://minikube.sigs.k8s.io/docs/start/
 
-### start Minikube
+### pre-requisites
  - w/ Powershell running as Administrator
  - Your Windows user added as a member of the `hyper-v administrators` security group
 
+### start Minikube
     minikube start --memory 1024s --cpus=2
 
 ### check status of minikube
@@ -32,3 +33,5 @@ service - A set of pods that perform the same task.
 ### port forward
 
     minikube kubectl -- port-forward service/cassandra 9042:9042
+
+Note that the `port-forward` runs in the foreground.
