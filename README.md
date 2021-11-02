@@ -8,9 +8,9 @@ https://minikube.sigs.k8s.io/docs/start/
  - Your Windows user added as a member of the `hyper-v administrators` security group
 
 ### start Minikube
-Limiting minikube to 2GB and 2 CPUs
+Limiting minikube to 3GB and 2 CPUs
 
-    minikube start --memory 2048 --cpus=2
+    minikube start --memory 3072 --cpus=2
 
 ### check status of minikube
     minikube kubectl -- get pods -A
@@ -42,7 +42,7 @@ Note that the `port-forward` runs in the foreground.  You can break-out of it wi
 
     minikube stop
 
-### restart provisioned cluster
+### restart an already-provisioned cluster
 
     minikube start
 
